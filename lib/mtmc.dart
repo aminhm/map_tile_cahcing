@@ -10,11 +10,11 @@ import 'package:path_provider/path_provider.dart';
 
 class MTMC extends TileProvider {
   @override
-  ImageProvider getImage(TileCoordinates coords, TileLayer options) {
+  ImageProvider getImage(TileCoordinates coordinates, TileLayer options) {
     return MapImageProvider(
       provider: MapTileProvider(),
       options: options,
-      coords: coords,
+      coords: coordinates,
     );
   }
 }
@@ -31,17 +31,19 @@ class MapImageProvider extends ImageProvider<MapImageProvider> {
   });
 
   @override
-  ImageStreamCompleter load(MapImageProvider key, DecoderCallback decode) {
+  ImageStreamCompleter loadImage(
+      MapImageProvider key, ImageDecoderCallback decode) {
     return MultiFrameImageStreamCompleter(
       codec: _loadAsync(decode),
       scale: 1.0,
     );
   }
 
-  Future<Codec> _loadAsync(DecoderCallback decode) async {
+  Future<Codec> _loadAsync(ImageDecoderCallback decode) async {
     final Uint8List? bytes = await provider.getTileImage(coords, options);
     if (bytes != null) {
-      return decode(bytes.buffer.asUint8List());
+      final ImmutableBuffer buffer = await ImmutableBuffer.fromUint8List(bytes);
+      return await decode(buffer);
     } else {
       throw Exception('Failed to load tile image');
     }
