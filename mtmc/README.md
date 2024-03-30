@@ -1,7 +1,3 @@
-Certainly! A README file serves as a crucial introduction to your Flutter package, guiding users on its purpose, installation, usage, and more. Here's a template for your MTMC (Map Tile Memory Caching) package README:
-
----
-
 # MTMC - Map Tile Memory Caching
 
 MTMC is a Flutter package designed to facilitate the storage of map tiles on the device memory. By caching map tiles locally, it enhances the performance and efficiency of map rendering in Flutter applications.
@@ -20,7 +16,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  mtmc: ^0.0.5
+  mtmc: ^0.0.6
 ```
 
 Then, run `flutter pub get` to install the package.
