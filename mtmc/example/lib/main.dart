@@ -89,25 +89,16 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: FlutterMap(
           options: const MapOptions(
-            keepAlive: true,
             initialZoom: 17,
             minZoom: 3,
             maxZoom: 20,
-            interactionOptions: InteractionOptions(
-                flags: InteractiveFlag.drag |
-                    InteractiveFlag.flingAnimation |
-                    InteractiveFlag.pinchZoom |
-                    InteractiveFlag.doubleTapZoom |
-                    InteractiveFlag.pinchMove),
           ),
           children: [
             TileLayer(
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-              tileProvider: CachedTileProvider(),
+              tileProvider: MTMC(),
             ),
           ],
         ),

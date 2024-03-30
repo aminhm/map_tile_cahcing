@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:path_provider/path_provider.dart';
 
-class CachedTileProvider extends TileProvider {
+class MTMC extends TileProvider {
   @override
   ImageProvider getImage(TileCoordinates coords, TileLayer options) {
     return MapImageProvider(
