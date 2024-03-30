@@ -1,6 +1,6 @@
 name: mtmc
 description: Map Tile Memory Caching is used to store flutter map tile images on the device memory 
-version: 0.0.6
+version: 0.0.7
 homepage: https://github.com/aminhm/map_tile_cahcing
 platforms:
   android:
