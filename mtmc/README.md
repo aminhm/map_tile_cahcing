@@ -8,6 +8,7 @@ MTMC is a Flutter package designed to facilitate the storage of map tiles on the
 
 ## Features
 
+- `No licence neede`.
 - Efficiently caches map tiles on the device memory for quick access and rendering.
 - Seamless integration with Flutter Map package, enabling easy tile caching for map widgets.
 - Reduces network requests by storing tiles locally, improving overall map loading speed.
@@ -19,7 +20,7 @@ Add the following dependency to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  mtmc: ^1.0.0
+  mtmc: ^0.0.2
 ```
 
 Then, run `flutter pub get` to install the package.
